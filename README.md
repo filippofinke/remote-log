@@ -1,4 +1,4 @@
-# remote-log
+# Remote Log
 
 Tool that allows you to read debug messages from your tweaks remotly.
 
