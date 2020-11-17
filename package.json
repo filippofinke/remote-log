@@ -26,6 +26,7 @@
   "dependencies": {
     "args": "^5.0.1",
     "colors": "^1.4.0",
+    "console-clear": "^1.1.1",
     "format-date-time": "^0.3.3"
   },
   "devDependencies": {

@@ -3,6 +3,8 @@ const dgram = require("dgram");
 const server = dgram.createSocket("udp4");
 const args = require("args");
 const date = new (require("format-date-time"))("HH:mm:ss");
+const readline = require("readline");
+const clear = require("console-clear");
 const colors = require("colors");
 
 // Costants
@@ -21,6 +23,16 @@ args.option(
 );
 
 const flags = args.parse(process.argv);
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.on("line", (input) => {
+  if (["clear", "cls"].includes(input)) clear(true);
+  console.log(`🚀 remote-log`.bold.yellow + ` Console cleared!`);
+});
 
 server.on("error", (err) => {
   console.log(`❌ server error:\n${err.stack}`.red);
