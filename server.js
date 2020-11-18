@@ -30,8 +30,10 @@ const rl = readline.createInterface({
 });
 
 rl.on("line", (input) => {
-  if (["clear", "cls"].includes(input)) clear(true);
-  console.log(`🚀 remote-log`.bold.yellow + ` Console cleared!`);
+  if (["clear", "cls"].includes(input)) {
+    clear(true);
+    console.log(`🚀 remote-log`.bold.yellow + ` Console cleared!`);
+  }
 });
 
 server.on("error", (err) => {
